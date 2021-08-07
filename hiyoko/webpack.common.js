@@ -14,10 +14,11 @@ module.exports = ({outputFilename, mediaFilename}) => ({
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         hot: true,
-        open: true,
         port: 3000,
         host: '0.0.0.0',
-        exclude: /node_modules/ //意味あるのかどうか？
+        watchOptions: {
+            ignored: /node_modules/
+        }
     },
     module: {
         rules: [

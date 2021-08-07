@@ -11,3 +11,5 @@ services:
     volumes:
       - ./$WORKDIR:/usr/app
       - node_modules_volume:/usr/app/node_modules
+    ports:
+      - "3000:3000"

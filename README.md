@@ -1,8 +1,10 @@
-# 利用目的
-JSモジュールのバンドルとscssのみ  
+## 動作確認時のバージョン
+```json
+{ 
+}
+```
 
-今後scssをwebpackの機能を利用するかどうか。。。？(分割しているとscssのホットリロードができない。だが、webpack内で利用すると内部cssで書き込まれる。)
-
+## 使い方
 dockerの起動
 ```shell
 $ make up
@@ -19,23 +21,20 @@ $ docker-compose exec front ash
 $ yarn init -y
 ```
 
-webpackのインストール
+webpack、sass、webpack serverのインストール
 ```shell
-$ yarn add webpack webpack-cli webpack-dev-server --dev
+$ yarn add --dev webpack webpack-cli sass sass-loader css-loader style-loader html-loader mini-css-extract-plugin html-webpack-plugin webpack-merge
 ```
 
-コンパイル(script.jsが存在していない時)
+コンパイル
 ```shell
-$ yarn run webpack
+# dev
+$ rm -rf dist || true && yarn run webpack --config ./webpack.dev.js
+# prod
+$ yarn run webpack --config ./webpack.prod.js
 ```
 
-ホットリロード
+watch
 ```shell
-$ yarn run webpack server
-```
-
-## scss
-自動コンパイル
-```shell
-$ docker-compose exec scss sass --watch style.scss:../css/style.css
+$ yarn run webpack --watch --config ./webpack.dev.js
 ```

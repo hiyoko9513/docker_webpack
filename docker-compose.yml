@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  node_modules_volume:
 services:
   front:
     image: node:16-alpine
@@ -8,12 +10,6 @@ services:
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./$WORKDIR:/usr/app
+      - node_modules_volume:/usr/app/node_modules
     ports:
       - "3000:3000"
-  scss:
-    build: .
-    working_dir: /var/www/js/scss
-    volumes:
-      - ./$WORKDIR/public:/var/www/js
-    stdin_open: true
-    tty: true

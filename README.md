@@ -16,6 +16,8 @@
 ```
 
 ## 使い方
+.envの作成
+
 dockerの起動
 ```shell
 $ make up
@@ -32,7 +34,7 @@ $ docker-compose exec front ash
 $ yarn init -y
 ```
 
-webpack、sass、webpack serverのインストール
+必要なライブラリのインストール
 ```shell
 $ yarn add --dev webpack webpack-cli webpack-dev-server sass sass-loader css-loader style-loader html-loader mini-css-extract-plugin html-webpack-plugin webpack-merge
 ```

@@ -8,14 +8,14 @@ const mediaFilename = '[name]'
 module.exports = () => merge(CommonConf({outputFilename, mediaFilename}), {
     mode: 'development',
     devtool: 'source-map',
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        hot: true,
-        open: true,
-        port: 3000,
-        host: '0.0.0.0',
-        exclude: /node_modules/ //意味あるのかどうか？
-    },
+    // devServer: {
+    //     contentBase: path.join(__dirname, 'dist'),
+    //     hot: true,
+    //     open: true,
+    //     port: 3000,
+    //     host: '0.0.0.0',
+    //     exclude: /node_modules/ //意味あるのかどうか？
+    // },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',

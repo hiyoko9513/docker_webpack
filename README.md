@@ -1,6 +1,18 @@
 ## 動作確認時のバージョン
 ```json
-{ 
+{
+  "css-loader": "^6.2.0",
+  "file-loader": "^6.2.0",
+  "html-loader": "^2.1.2",
+  "html-webpack-plugin": "^5.3.2",
+  "image-webpack-loader": "^7.0.1",
+  "mini-css-extract-plugin": "^2.2.0",
+  "sass": "^1.37.5",
+  "sass-loader": "^12.1.0",
+  "style-loader": "^3.2.1",
+  "webpack": "^5.49.0",
+  "webpack-cli": "^4.7.2",
+  "webpack-merge": "^5.8.0"
 }
 ```
 
